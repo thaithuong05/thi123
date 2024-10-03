@@ -4,104 +4,150 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap" rel="stylesheet">
+
     <title>FOOD</title>
+    <link rel="icon" href="image/loco.png" sizes="64x64" type="image/png">
+
     <style>
         body {
             margin: 0;
             padding: 0;
+            height: 100vh;
+            font-family: 'Spicy Rice', cursive;
+        }
+
+        .hang0 {
+            display: flex;
+            align-items: center;
+            background-color: rgb(240, 112, 20);
+            height: 10%;
+            padding: 0 20px;
+        }
+
+        .hang0 div:first-child {
+            flex: 2;
+            text-align: center;
+            color: black;
+            font-size: 2.5em;
+        }
+
+        .hang0 .search {
+            flex: 4;
+            display: flex;
+            align-items: center;
+        }
+
+        .search input {
+            width: 80%;
+            height: 40px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+
+        .hang0 img {
+            width: 50px;
+            height: auto;
+            border: 2px solid red;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .hang1 {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            height: 100px;
+            margin: 0;
+            padding: 0;
+            border: 1px solid black;
+            background-image: url('image/nenhang1.jpg');
+        }
+
+        .hang1 li {
             display: flex;
             flex-direction: column;
-            align-items: center; /* Căn giữa theo chiều ngang */
+            align-items: center;
+            margin: 0 15px;
+            text-align: center;
+            cursor: pointer;
         }
-        .hang1 {
-            width: 100%;
-            height: 60px;
-            display: flex;
-            background-color: black;
-            align-items: center; /* Căn giữa theo chiều dọc */
-        }
-        .hang1 div {
-            flex: 1;
-            color: white;
-            text-align: center; /* Căn giữa theo chiều ngang cho văn bản */
-        }
-        .hang1 div:first-child {
-            font-family: 'Spicy Rice', cursive;
-            font-size: 30px;
-            color: aquamarine;
-        }
-        .hang1 div:last-child {
-            display: flex; /* Sử dụng flex cho div chứa hình ảnh */
-            justify-content: center; /* Căn giữa theo chiều ngang */
-            align-items: center; /* Căn giữa theo chiều dọc */
-        }
+
         .hang1 img {
-            width: 40px;
-            height: 40px;
-            border-radius: 20px; /* Làm cho hình ảnh tròn */
+            width: 50px;
+            height: 50px;
+            border: 5px solid white;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 5px 0;
         }
 
-        .image-container {
-            display: flex; /* Sử dụng flex cho div chứa hình ảnh */
-            justify-content: center; /* Căn giữa theo chiều ngang */
-            align-items: center; /* Căn giữa theo chiều dọc */
-            position: relative;
-            width: 400px;
-            height: 400px;
-            overflow: hidden; /* Ẩn phần thừa nếu cần */
-            margin-top: 20px; /* Khoảng cách từ thanh điều hướng */
+        .hang1 a {
+            display: block;
+            text-decoration: none;
+            color: black;
         }
-        .image-container img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%; /* Làm cho ảnh rộng hết chiều rộng của container */
-            height: 100%; /* Đặt chiều cao của ảnh bằng với chiều cao của container */
-            object-fit: cover; /* Đảm bảo ảnh không bị biến dạng */
-        }
-        .image-container img.hidden {
-            opacity: 0; /* Ẩn hình ảnh thứ hai */
-        }
-
     </style>
 </head>
 <body>
-    <div class="hang1">
-        <div>FOOD</div>
-        <div>Home</div>
-        <div>Products</div>
-        <div>About Us</div>
-        <div>Food News</div>
+    <div class="hang0">
         <div>
-            <a href="">
-                <img src="daidien.jpg" alt="Avatar">
-            </a>
+            LUFFY FOOD
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Tìm kiếm...">
+            <button style="margin-left: 10px; height: 50px; border: none; background-color: white; cursor: pointer; border-radius: 5px; padding: 0 20px; font-weight: bold;">Tìm</button>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: center; flex: 1; gap: 50px;">   
+            <button style="border: none; background: transparent;">
+                <img src="image/giohang.jpg" alt="Giỏ hàng">
+            </button>
+            <button style="border: none; background: transparent;">
+                <img src="image/daidien.jpg" alt="Avatar">
+            </button>
         </div>
     </div>
 
-    <div class="image-container">
-        <img src="1.jpg" alt="Image 1">
-        <img src="2.jpg" alt="Image 2" class="hidden">
-    </div>
-    
+    <ul class="hang1">
+        <li>
+            <a href="#"><img src="image/new.jpg" alt="Món mới"></a>
+            Món mới
+        </li>
+        <li>
+            <a href="#"><img src="image/combo.jpg" alt="Combo"></a>
+            Combo
+        </li>
+        <li>
+            <a href="#"><img src="image/burger.jpg" alt="Burger"></a>
+            Burger
+        </li>
+        <li>
+            <a href="#"><img src="image/garan.jpg" alt="Gà rán"></a>
+            Gà rán
+        </li>
+        <li>
+            <a href="#"><img src="image/douong.jpg" alt="Thức uống"></a>
+            Thức uống
+        </li>
+    </ul>
+
+    <div id="clock" style="text-align: center; font-size: 10em; margin: 20px;"></div>
 
 
-    
     <script>
-        const container = document.querySelector('.image-container');
-        const img1 = container.children[0];
-        const img2 = container.children[1];
-
-        container.addEventListener('mouseover', () => {
-            img1.classList.add('hidden'); // Ẩn ảnh đầu tiên
-            img2.classList.remove('hidden'); // Hiện ảnh thứ hai
-        });
-
-        container.addEventListener('mouseout', () => {
-            img1.classList.remove('hidden'); // Hiện ảnh đầu tiên
-            img2.classList.add('hidden'); // Ẩn ảnh thứ hai
-        });
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const timeString = `${hours}:${minutes}:${seconds}`;
+            
+            document.getElementById('clock').textContent = timeString;
+        }
+    
+        setInterval(updateClock, 1000);
+        updateClock(); // Gọi ngay để hiển thị thời gian đầu tiên
     </script>
-
+    
 </body>
 </html>
