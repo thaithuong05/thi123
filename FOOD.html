@@ -6,29 +6,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap" rel="stylesheet">
 
     <title>FOOD</title>
-    <link rel="icon" href="loco.png" sizes="64x64" type="png">
+    <link rel="icon" href="loco.png" sizes="64x64" type="image/png">
 
     <style>
         body {
             margin: 0;
             padding: 0;
-            height: 100vh;
             font-family: 'Spicy Rice', cursive;
         }
 
         .hang0 {
             display: flex;
+            flex-direction: row; /* Đặt theo hàng */
             align-items: center;
             background-color: rgb(240, 112, 20);
-            height: 10%;
-            padding: 0 20px;
+            padding: 10px; /* Thêm padding cho các thành phần */
+            flex-wrap: wrap; /* Cho phép tự động xuống dòng khi không đủ chỗ */
         }
 
         .hang0 div:first-child {
             flex: 2;
             text-align: center;
             color: black;
-            font-size: 2.5em;
+            font-size: 2em; /* Kích thước chữ điều chỉnh lại cho phù hợp với điện thoại */
         }
 
         .hang0 .search {
@@ -57,18 +57,17 @@
             display: flex;
             justify-content: center;
             list-style-type: none;
-            height: 100px;
+            padding: 10px 0; /* Thêm padding cho khoảng cách */
             margin: 0;
-            padding: 0;
-            border: 1px solid black;
             background-image: url('nenhang1.jpg');
+            flex-wrap: wrap; /* Cho phép xuống dòng khi không đủ chỗ */
         }
 
         .hang1 li {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: 0 15px;
+            margin: 0 15px; /* Giữ khoảng cách giữa các mục */
             text-align: center;
             cursor: pointer;
         }
@@ -87,18 +86,51 @@
             text-decoration: none;
             color: black;
         }
+
+        #clock {
+            text-align: center;
+            font-size: 5em; /* Giảm kích thước cho phù hợp với điện thoại */
+            margin: 20px;
+        }
+
+        /* Media Queries */
+        @media (max-width: 600px) {
+            .hang0 {
+                flex-direction: column; /* Chuyển thành cột trên màn hình nhỏ */
+                align-items: center; /* Căn giữa */
+            }
+
+            .hang0 div:first-child {
+                font-size: 1.5em; /* Giảm kích thước chữ cho tiêu đề */
+            }
+
+            .search input {
+                width: 90%; /* Đặt ô tìm kiếm chiếm hầu hết chiều rộng */
+            }
+
+            .hang1 {
+                flex-direction: column; /* Đặt các mục li thành cột */
+                align-items: center; /* Căn giữa */
+            }
+
+            .hang1 li {
+                margin: 10px 0; /* Thêm khoảng cách giữa các mục */
+            }
+
+            #clock {
+                font-size: 3em; /* Giảm kích thước đồng hồ */
+            }
+        }
     </style>
 </head>
 <body>
     <div class="hang0">
-        <div>
-            LUFFY FOOD
-        </div>
+        <div>LUFFY FOOD</div>
         <div class="search">
             <input type="text" placeholder="Tìm kiếm...">
-            <button style="margin-left: 10px; height: 50px; border: none; background-color: white; cursor: pointer; border-radius: 5px; padding: 0 20px; font-weight: bold;">Tìm</button>
+            <button style="margin-left: 10px; height: 40px; border: none; background-color: white; cursor: pointer; border-radius: 5px; padding: 0 20px; font-weight: bold;">Tìm</button>
         </div>
-        <div style="display: flex; align-items: center; justify-content: center; flex: 1; gap: 50px;">   
+        <div style="display: flex; align-items: center; justify-content: center; flex: 1; gap: 20px;">   
             <button style="border: none; background: transparent;">
                 <img src="giohang.jpg" alt="Giỏ hàng">
             </button>
@@ -131,8 +163,7 @@
         </li>
     </ul>
 
-    <div id="clock" style="text-align: center; font-size: 10em; margin: 20px;"></div>
-
+    <div id="clock"></div>
 
     <script>
         function updateClock() {
@@ -148,6 +179,5 @@
         setInterval(updateClock, 1000);
         updateClock(); 
     </script>
-    
 </body>
 </html>
