@@ -2,17 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link href="https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap" rel="stylesheet">
 
     <title>FOOD</title>
-    <link rel="icon" href="loco.png" sizes="64x64" type="image/png">
+    <link rel="icon" href="images/loco.png" sizes="64x64" type="images/png">
 
     <style>
         body {
             margin: 0;
             padding: 0;
             font-family: 'Spicy Rice', cursive;
+            border: 4px solid #0d0d0d;
+        }
+
+        .link {
+            transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu mượt mà */
+        }
+
+        .link:hover {
+             background-color: rgba(255, 165, 0, 0.5); /* Màu nền khi di chuột qua */
         }
 
         .hang0 {
@@ -22,6 +31,7 @@
             background-color: rgb(240, 112, 20);
             padding: 10px;
             flex-wrap: wrap;
+            border: 4px solid #0d0d0d;
         }
 
         .hang0 div:first-child {
@@ -35,21 +45,22 @@
             flex: 4;
             display: flex;
             align-items: center;
-            margin: 10px 0; /* Thêm khoảng cách cho ô tìm kiếm */
+            margin: 10px 0;
+            border: 4px solid #0d0d0d;
         }
 
         .search input {
-            width: 100%; /* Chiếm toàn bộ chiều rộng */
+            width: 100%; 
             height: 40px;
             border-radius: 5px;
-            border: 1px solid #ccc;
+            border: 4px solid #0d0d0d;
             padding: 5px;
         }
 
         .hang0 img {
             width: 50px;
             height: auto;
-            border: 2px solid red;
+            border: 4px solid #0d0d0d;
             border-radius: 50%;
             cursor: pointer;
         }
@@ -60,68 +71,75 @@
             list-style-type: none;
             padding: 10px 0; 
             margin: 0;
-            background-image: url('nenhang1.jpg');
-            flex-wrap: wrap;
+            background-image: url('images/nenhang1.jpg');
+            border: 4px solid #0d0d0d;
         }
 
         .hang1 li {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: 10px; /* Giảm khoảng cách giữa các mục */
+            margin: 10px; 
             text-align: center;
             cursor: pointer;
+            border: 4px solid #0d0d0d;
+            transition: background-color 0.3s ease;
         }
+        .hang1 li:hover {
+            background-color: rgba(255, 165, 0, 0.5); /* Màu nền khi di chuột qua */
+        }   
 
         .hang1 img {
             width: 50px;
             height: 50px;
-            border: 5px solid white;
+            border: 4px solid #0d0d0d;
             border-radius: 50%;
             object-fit: cover;
             margin: 5px 0;
         }
 
-        .hang1 a {
+        .hang1 a:hover {
             display: block;
             text-decoration: none;
             color: black;
         }
 
-        #clock {
+        .hang2 {
+            display: flex;
+            border: 1px dashed #0d0d0d;
+            margin: 10px;
+            height: auto;
+            list-style-type: none;
+            flex-wrap: wrap;
+            justify-content: center; /* Căn giữa các phần tử */
+            
+        }
+        .hang2div{
+            width: auto;
+            height: auto;
+            margin: 4px;
+            border: 4px solid black;
             text-align: center;
-            font-size: 5em; 
-            margin: 20px;
+
         }
-
-        /* Media Queries */
-        @media (max-width: 600px) {
-            .hang0 {
-                flex-direction: column; 
-                align-items: center; 
-            }
-
-            .hang0 div:first-child {
-                font-size: 1.5em; 
-            }
-
-            .search input {
-                width: 90%; /* Giữ ô tìm kiếm chiếm gần hết chiều rộng */
-            }
-
-            .hang1 {
-                flex-direction: column; /* Đặt các mục li thành cột */
-                align-items: center; 
-            }
-
-            .hang1 li {
-                margin: 10px 0; 
-            }
-
-            #clock {
-                font-size: 3em; 
-            }
+        .hang2div div{
+            width: auto;
+            border-bottom: 2px solid #00FF00;
+            flex: 1; /* Các phần tử sẽ chiếm đều không gian */
+            margin: 5px;
+            
+            
         }
+       
+        
+        .hang2 img{
+            max-width: 100%;
+            height: 200px;
+            border: 4px solid red;
+            border-radius: 10%;
+            object-fit: cover; /* Giữ tỷ lệ khung hình và không làm méo ảnh */
+        }
+        
     </style>
 </head>
 <body>
@@ -133,52 +151,96 @@
         </div>
         <div style="display: flex; align-items: center; justify-content: center; flex: 1; gap: 20px;">   
             <button style="border: none; background: transparent;">
-                <img src="giohang.jpg" alt="Giỏ hàng">
+                <img src="images/giohang.jpg" alt="Giỏ hàng">
             </button>
             <button style="border: none; background: transparent;">
-                <img src="daidien.jpg" alt="Avatar">
+                <img src="images/daidien.jpg" alt="Avatar">
             </button>
         </div>
     </div>
 
     <ul class="hang1">
         <li>
-            <a href="#"><img src="new.jpg" alt="Món mới"></a>
+            <a href="monmoi.html"><img src="images/new.jpg" alt="Món mới"></a>
             Món mới
         </li>
         <li>
-            <a href="#"><img src="combo.jpg" alt="Combo"></a>
+            <a href="#"><img src="images/combo.jpg" alt="Combo"></a>
             Combo
         </li>
         <li>
-            <a href="#"><img src="burger.jpg" alt="Burger"></a>
+            <a href="#"><img src="images/burger.jpg" alt="Burger"></a>
             Burger
         </li>
         <li>
-            <a href="#"><img src="garan.jpg" alt="Gà rán"></a>
+            <a href="#"><img src="images/garan.jpg" alt="Gà rán"></a>
             Gà rán
         </li>
         <li>
-            <a href="#"><img src="douong.jpg" alt="Thức uống"></a>
+            <a href="#"><img src="images/douong.jpg" alt="Thức uống"></a>
             Thức uống
         </li>
     </ul>
-
-    <div id="clock"></div>
-
-    <script>
-        function updateClock() {
-            const now = new Date();
-            const hours = String(now.getHours()).padStart(2, '0');
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            const seconds = String(now.getSeconds()).padStart(2, '0');
-            const timeString = `${hours}:${minutes}:${seconds}`;
-            
-            document.getElementById('clock').textContent = timeString;
-        }
     
-        setInterval(updateClock, 1000);
-        updateClock(); 
-    </script>
+    <div class="hang2">
+        <div class="hang2div">
+            <a href="#"><img src="images/garan.jpg"></a>
+            <div>Mã sp : 1</div>
+            <div>Gà Rán Ngon Nhức Nách</div>
+            <div>Giá : 1 viên kc của cô Hằng</div>
+            <div><span><button class="link">Mua</button></span></div>
+            <div><span><button class="link">Thêm vào giỏ hàng</button></span></div>
+        </div>
+        <div class="hang2div">
+            <a href="#"><img src="images/garan.jpg"></a>
+            <div>Mã sp : 1</div>
+            <div>Gà Rán Ngon Nhức Nách</div>
+            <div>Giá : 1 viên kc của cô Hằng</div>
+            <div><span><button class="link">Mua</button></span></div>
+            <div><span><button class="link">Thêm vào giỏ hàng</button></span></div>
+        </div>
+        <div class="hang2div">
+            <a href="#"><img src="images/garan.jpg"></a>
+            <div>Mã sp : 1</div>
+            <div>Gà Rán Ngon Nhức Nách</div>
+            <div>Giá : 1 viên kc của cô Hằng</div>
+            <div><span><button class="link">Mua</button></span></div>
+            <div><span><button class="link">Thêm vào giỏ hàng</button></span></div>
+        </div>
+        <div class="hang2div">
+            <a href="#"><img src="images/garan.jpg"></a>
+            <div>Mã sp : 1</div>
+            <div>Gà Rán Ngon Nhức Nách</div>
+            <div>Giá : 1 viên kc của cô Hằng</div>
+            <div><span><button class="link">Mua</button></span></div>
+            <div><span><button class="link">Thêm vào giỏ hàng</button></span></div>
+        </div>
+        <div class="hang2div">
+            <a href="#"><img src="images/garan.jpg"></a>
+            <div>Mã sp : 1</div>
+            <div>Gà Rán Ngon Nhức Nách</div>
+            <div>Giá : 1 viên kc của cô Hằng</div>
+            <div><span><button class="link">Mua</button></span></div>
+            <div><span><button class="link">Thêm vào giỏ hàng</button></span></div>
+        </div>
+        <div class="hang2div">
+            <a href="#"><img src="images/garan.jpg"></a>
+            <div>Mã sp : 1</div>
+            <div>Gà Rán Ngon Nhức Nách</div>
+            <div>Giá : 1 viên kc của cô Hằng</div>
+            <div><span><button class="link">Mua</button></span></div>
+            <div><span><button class="link">Thêm vào giỏ hàng</button></span></div>
+        </div>
+        <div class="hang2div">
+            <a href="#"><img src="images/garan.jpg"></a>
+            <div>Mã sp : 1</div>
+            <div>Gà Rán Ngon Nhức Nách</div>
+            <div>Giá : 1 viên kc của cô Hằng</div>
+            <div><span><button class="link">Mua</button></span></div>
+            <div><span><button class="link">Thêm vào giỏ hàng</button></span></div>
+        </div>
+
+    </div>
+    
 </body>
 </html>
